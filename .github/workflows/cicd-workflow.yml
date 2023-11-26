@@ -18,7 +18,7 @@ jobs:
         run: docker push wongkj11/nodejs-app:latest
   deploy:
     needs: build
-    runs-on: [aws-ec2]
+    runs-on: self-hosted
     steps:
       - name: Pull image from docker hub
         run: docker pull wongkj11/nodejs-app:latest
