@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Install docker
         run: sudo yum -y install docker
+      - name: Give permissions to access the docker files
+        run: sudo chmod 777 /var/run/docker.sock
       - name: Run docker
         run: sudo service docker start
       - name: Pull image from docker hub
