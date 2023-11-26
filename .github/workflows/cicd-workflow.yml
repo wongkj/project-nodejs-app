@@ -20,7 +20,8 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
-
+      - name: Install docker
+        run: sudo yum -y install docker
       - name: Pull image from docker hub
         run: docker pull wongkj11/nodejs-app:latest
       - name: Delete old container
